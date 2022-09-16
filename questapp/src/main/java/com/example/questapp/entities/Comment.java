@@ -14,7 +14,6 @@ public class Comment {
 
     @Id
     Long id;
-    Long postId;
 
     @ManyToOne(fetch = FetchType.LAZY) //user objesini databaseden hemen çekme, post objesini çektiğimde ilgili userı bana getirmene gerek yok//Çekmesini isteseydi LAZY yerine EAGER olacaktı
     @JoinColumn(name="post_id",nullable=false)
