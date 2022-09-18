@@ -46,4 +46,5 @@ public class CommentController {
     public void deleteOneComment(@PathVariable Long commentId){
         commentService.deleteOneCommentById(commentId);
     }
+
 }
