@@ -15,10 +15,10 @@ public class Post {
     @Id
     Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY) //user objesini databaseden hemen çekme, post objesini çektiğimde ilgili userı bana getirmene gerek yok//Çekmesini isteseydi LAZY yerine EAGER olacaktı
+    @ManyToOne(fetch = FetchType.EAGER) //user objesini databaseden hemen çekme, post objesini çektiğimde ilgili userı bana getirmene gerek yok//Çekmesini isteseydi LAZY yerine EAGER olacaktı
     @JoinColumn(name="user_id",nullable=false)
     @OnDelete(action= OnDeleteAction.CASCADE)
-    @JsonIgnore //fetch de etmeyeceğiz zaten lazy, bu alanla işimiz yok diyoruz
+    //@JsonIgnore //fetch de etmeyeceğiz zaten lazy, bu alanla işimiz yok diyoruz
     User user;
 
     String title;
