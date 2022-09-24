@@ -13,6 +13,7 @@ import javax.persistence.*;
 public class Post {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     Long id;
 
     @ManyToOne(fetch = FetchType.EAGER) //user objesini databaseden hemen çekme, post objesini çektiğimde ilgili userı bana getirmene gerek yok//Çekmesini isteseydi LAZY yerine EAGER olacaktı
